@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView style="@style/TextoTitulo" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Consulta de salario" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTrabajador"
+                style="@style/CampoDesplegable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Trabajador"
+                app:startIconDrawable="@drawable/ic_work">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actvTrabajador"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilHorasExtra"
+                style="@style/CampoTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Horas extra del mes"
+                app:helperText="S/ 15.00 por hora extra"
+                app:startIconDrawable="@drawable/ic_schedule">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etHorasExtra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCalcular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Ver salario"
+                app:icon="@drawable/ic_money" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardResultado"
+                style="@style/Tarjeta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView android:id="@+id/tvResNombre" style="@style/TextoTitulo" android:layout_width="match_parent" android:layout_height="wrap_content" />
+                    <TextView android:id="@+id/tvResCargo" style="@style/TextoParrafo" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/texto_secundario" />
+                    <TextView android:id="@+id/tvResDetalle" style="@style/TextoParrafo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" />
+                    <TextView android:id="@+id/tvResNeto" style="@style/TextoParrafo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="@color/verde_andino" android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
