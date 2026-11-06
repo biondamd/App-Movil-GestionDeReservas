@@ -7,27 +7,71 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.andesaventura.app.adapter.PaqueteDestacadoAdapter
+import com.andesaventura.app.data.PaqueteRepository
+import com.andesaventura.app.data.ReservaRepository
 import com.andesaventura.app.data.SessionManager
 import com.andesaventura.app.databinding.FragmentContactosBinding
 import com.andesaventura.app.databinding.FragmentInicioBinding
 import com.andesaventura.app.databinding.FragmentLoginBinding
 import com.andesaventura.app.databinding.FragmentNosotrosBinding
+import com.andesaventura.app.model.EstadoReserva
+import com.andesaventura.app.ui.BaseActivity
 import com.andesaventura.app.ui.LoginActivity
 import com.andesaventura.app.ui.MapaActivity
+import com.andesaventura.app.ui.PaqueteDetalleActivity
 import com.andesaventura.app.ui.PaquetesActivity
 import com.andesaventura.app.ui.ReservasActivity
 import com.andesaventura.app.ui.SalariosActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import java.util.Calendar
 
 class InicioFragment : Fragment() {
+    private var _binding: FragmentInicioBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        val binding = FragmentInicioBinding.inflate(inflater, container, false)
-        binding.tvBienvenida.text = "Hola, ${SessionManager(requireContext()).usuario ?: "viajero"}"
+        _binding = FragmentInicioBinding.inflate(inflater, container, false)
+
+        val usuario = SessionManager(requireContext()).usuario
+        val nombre = usuario?.substringBefore("@")?.replaceFirstChar { it.uppercase() }?.ifBlank { "Viajero" } ?: "Viajero"
+        binding.tvBienvenida.text = nombre
+        binding.tvInicial.text = nombre.first().uppercase()
+        binding.tvSaludo.text = when (Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) {
+            in 5..11 -> "Buenos días"
+            in 12..18 -> "Buenas tardes"
+            else -> "Buenas noches"
+        }
+
         binding.cardPaquetes.setOnClickListener { abrir(PaquetesActivity::class.java) }
         binding.cardReservas.setOnClickListener { abrir(ReservasActivity::class.java) }
         binding.cardMapa.setOnClickListener { abrir(MapaActivity::class.java) }
         binding.cardSalarios.setOnClickListener { abrir(SalariosActivity::class.java) }
+        binding.tvVerTodos.setOnClickListener { abrir(PaquetesActivity::class.java) }
+
+        binding.rvDestacados.adapter = PaqueteDestacadoAdapter(PaqueteRepository.listar().take(4)) { paquete ->
+            startActivity(
+                Intent(requireContext(), PaqueteDetalleActivity::class.java)
+                    .putExtra(BaseActivity.EXTRA_PAQUETE, paquete)
+            )
+        }
         return binding.root
+    }
+
+    /** Refresca el resumen al volver de crear o editar una reserva. */
+    override fun onResume() {
+        super.onResume()
+        val reservas = ReservaRepository.listar()
+        binding.tvStatTotal.text = reservas.size.toString()
+        binding.tvStatPendientes.text =
+            reservas.count { it.estadoReserva == EstadoReserva.PENDIENTE }.toString()
+        binding.tvStatConfirmadas.text =
+            reservas.count { it.estadoReserva == EstadoReserva.CONFIRMADO }.toString()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     private fun abrir(destino: Class<*>) = startActivity(Intent(requireContext(), destino))

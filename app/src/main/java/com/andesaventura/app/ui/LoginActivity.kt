@@ -14,6 +14,7 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        ajustarBordesLogin(binding.root)
 
         binding.btnIngresar.setOnClickListener { validarIngreso() }
     }

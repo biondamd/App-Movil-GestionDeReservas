@@ -9,14 +9,19 @@ Aplicación Android nativa en Kotlin para la empresa ficticia **Andes Aventura**
 - Gradle 9.2.1, que se descarga solo con el wrapper, y AGP 8.13.
 - Kotlin 2.2.
 - Un dispositivo o emulador con Android 9 (API 28) o superior y Google Play Services.
+- Una API Key de Google Maps SDK for Android.
 
 ## Instalación
 
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/biondamd/App-Movil-GestionDeReservas.git
+   git clone <url-del-repositorio>
    ```
 2. Abrir la carpeta del proyecto en Android Studio y esperar a que termine la sincronización de Gradle.
+3. Agregar la API Key de Google Maps en `local.properties`, en la raíz del proyecto. Este archivo no se sube al repositorio:
+   ```properties
+   MAPS_API_KEY=TU_API_KEY
+   ```
 
 ## Ejecución
 
