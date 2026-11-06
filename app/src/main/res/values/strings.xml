@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Andes Aventura</string>
+    <string name="empresa">Andes Aventura Tours S.A.C.</string>
+    <string name="eslogan">Vive la aventura en el corazón de los Andes</string>
+    <string name="abrir_menu">Abrir menú</string>
+    <string name="cerrar_menu">Cerrar menú</string>
+
+    <string name="menu_inicio">Inicio</string>
+    <string name="menu_nosotros">Nosotros</string>
+    <string name="menu_contactos">Contactos</string>
+    <string name="menu_login">Login</string>
+
+    <string name="usuario">Correo de usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="credenciales_demo">Usuario demo: admin@andesaventura.pe\nContraseña: 123456</string>
+
+    <string name="nosotros_presentacion">Somos una empresa cusqueña de turismo de aventura fundada en 2015. Organizamos caminatas, sandboarding, canotaje y expediciones de alta montaña por todo el Perú con guías certificados y equipos de seguridad.</string>
+    <string name="nosotros_mision">Brindar experiencias de aventura seguras, sostenibles y memorables, conectando a nuestros clientes con la naturaleza y la cultura andina.</string>
+    <string name="nosotros_vision">Ser la agencia de turismo de aventura líder del Perú, reconocida por su seguridad, innovación y compromiso con las comunidades locales.</string>
+    <string name="nosotros_valores">Seguridad, respeto por la naturaleza, puntualidad y pasión por la aventura.</string>
+
+    <string name="contacto_telefono">+51 984 000 111</string>
+    <string name="contacto_correo">reservas@andesaventura.pe</string>
+    <string name="contacto_direccion">Av. El Sol 345, Cusco - Perú</string>
+</resources>

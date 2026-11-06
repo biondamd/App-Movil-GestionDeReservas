@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta corporativa de Andes Aventura Tours -->
+    <color name="verde_andino">#1B5E20</color>
+    <color name="verde_andino_oscuro">#003300</color>
+    <color name="verde_claro">#C8E6C9</color>
+    <color name="naranja_aventura">#E65100</color>
+    <color name="naranja_claro">#FFE0B2</color>
+    <color name="fondo">#F6F7F2</color>
+    <color name="texto">#1C1B1F</color>
+    <color name="texto_secundario">#5F6368</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="estado_pendiente">#F9A825</color>
+    <color name="estado_confirmado">#2E7D32</color>
+    <color name="estado_finalizado">#546E7A</color>
+</resources>

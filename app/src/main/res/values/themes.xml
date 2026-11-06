@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AndesAventura" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/verde_andino</item>
+        <item name="colorOnPrimary">@color/blanco</item>
+        <item name="colorPrimaryContainer">@color/verde_claro</item>
+        <item name="colorOnPrimaryContainer">@color/verde_andino_oscuro</item>
+        <item name="colorSecondary">@color/naranja_aventura</item>
+        <item name="colorOnSecondary">@color/blanco</item>
+        <item name="colorSecondaryContainer">@color/naranja_claro</item>
+        <item name="android:colorBackground">@color/fondo</item>
+        <item name="colorSurface">@color/blanco</item>
+        <item name="android:statusBarColor">@color/verde_andino_oscuro</item>
+    </style>
+
+    <style name="Theme.AndesAventura.Splash">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/verde_andino</item>
+    </style>
+
+    <style name="Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/verde_andino</item>
+        <item name="titleTextColor">@color/blanco</item>
+        <item name="navigationIconTint">@color/blanco</item>
+    </style>
+
+    <!-- Tipografía solicitada: Título 28sp, párrafo 24sp, interlineado 30sp -->
+    <style name="TextoTitulo">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/verde_andino</item>
+    </style>
+
+    <style name="TextoParrafo">
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineHeight">30sp</item>
+        <item name="android:textColor">@color/texto</item>
+    </style>
+
+    <style name="Tarjeta" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="contentPadding">16dp</item>
+        <item name="cardBackgroundColor">@color/blanco</item>
+    </style>
+
+    <style name="CampoTexto" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="startIconTint">@color/verde_andino</item>
+    </style>
+
+    <style name="CampoDesplegable" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="startIconTint">@color/verde_andino</item>
+    </style>
+</resources>
