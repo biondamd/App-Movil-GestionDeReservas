@@ -15,7 +15,7 @@ Aplicación Android nativa en Kotlin para la empresa ficticia **Andes Aventura**
 
 1. Clonar el repositorio:
    ```bash
-   git clone <url-del-repositorio>
+   git clone https://github.com/biondamd/App-Movil-GestionDeReservas.git
    ```
 2. Abrir la carpeta del proyecto en Android Studio y esperar a que termine la sincronización de Gradle.
 3. Agregar la API Key de Google Maps en `local.properties`, en la raíz del proyecto. Este archivo no se sube al repositorio:
