@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/menu_login"
+        android:src="@drawable/ic_person"
+        app:tint="@color/verde_andino" />
+
+    <TextView style="@style/TextoTitulo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mi cuenta" />
+
+    <TextView
+        android:id="@+id/tvUsuario"
+        style="@style/TextoParrafo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/naranja_aventura"
+        android:text="Cerrar sesión"
+        app:icon="@drawable/ic_logout" />
+</LinearLayout>

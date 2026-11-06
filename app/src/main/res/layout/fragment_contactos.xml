@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView style="@style/TextoTitulo" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Contáctanos" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Tarjeta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView style="@style/TextoParrafo" android:layout_width="match_parent" android:layout_height="wrap_content" android:drawablePadding="8dp" android:text="@string/contacto_telefono" app:drawableStartCompat="@drawable/ic_phone" app:drawableTint="@color/verde_andino" />
+                <TextView style="@style/TextoParrafo" android:layout_width="match_parent" android:layout_height="wrap_content" android:drawablePadding="8dp" android:text="@string/contacto_correo" app:drawableStartCompat="@drawable/ic_email" app:drawableTint="@color/verde_andino" />
+                <TextView style="@style/TextoParrafo" android:layout_width="match_parent" android:layout_height="wrap_content" android:drawablePadding="8dp" android:text="@string/contacto_direccion" app:drawableStartCompat="@drawable/ic_place" app:drawableTint="@color/verde_andino" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView style="@style/TextoTitulo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Envíanos un mensaje" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNombre"
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre completo"
+            app:startIconDrawable="@drawable/ic_person">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCorreo"
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo electrónico"
+            app:startIconDrawable="@drawable/ic_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilMensaje"
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mensaje"
+            app:counterEnabled="true"
+            app:counterMaxLength="300">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMensaje"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:maxLength="300"
+                android:minLines="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEnviar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Enviar"
+            app:icon="@drawable/ic_send" />
+    </LinearLayout>
+</ScrollView>
