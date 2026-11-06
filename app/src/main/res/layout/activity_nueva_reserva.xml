@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView style="@style/TextoTitulo" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Datos del cliente" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCliente"
+                style="@style/CampoTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre del cliente"
+                app:startIconDrawable="@drawable/ic_person">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapWords" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTelefono"
+                style="@style/CampoTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Teléfono"
+                app:counterEnabled="true"
+                app:counterMaxLength="9"
+                app:startIconDrawable="@drawable/ic_phone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:maxLength="9" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView style="@style/TextoTitulo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Datos del viaje" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilDestino"
+                style="@style/CampoDesplegable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Destino"
+                app:startIconDrawable="@drawable/ic_terrain">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actvDestino"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilFecha"
+                style="@style/CampoTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fecha de viaje"
+                app:startIconDrawable="@drawable/ic_calendar">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etFecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPersonas"
+                style="@style/CampoTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cantidad de personas"
+                app:startIconDrawable="@drawable/ic_group">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPersonas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Registrar reserva"
+                app:icon="@drawable/ic_add" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Tarjeta"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvCliente"
+            style="@style/TextoTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvDestino"
+            style="@style/TextoParrafo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvPersonas"
+            style="@style/TextoParrafo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/texto_secundario" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipEstado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

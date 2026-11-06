@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Tarjeta"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvNombre"
+            style="@style/TextoTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            app:drawableStartCompat="@drawable/ic_terrain"
+            app:drawableTint="@color/verde_andino" />
+
+        <TextView
+            android:id="@+id/tvDestino"
+            style="@style/TextoParrafo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            app:drawableStartCompat="@drawable/ic_place"
+            app:drawableTint="@color/naranja_aventura" />
+
+        <TextView
+            android:id="@+id/tvPrecio"
+            style="@style/TextoParrafo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/naranja_aventura" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
